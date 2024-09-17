@@ -14,30 +14,26 @@
   </head>
 
   <body>
-    <a-scene
-      arjs
-      embedded
-      renderer="logarithmicDepthBuffer: true;"
-      vr-mode-ui="enabled: false"
-      gesture-detector
-      id="scene"
-    >
-      <a-assets>
-        <a-asset-item
-          id="bowser"
-          src="komachi_panko.glb"
-        >
-        </a-asset-item>
-      </a-assets>
+   <a-assets>
+    <img id="myImage" src="кот с комп.jpg" alt="My Image">
+</a-assets>
 
-      <a-marker
-        type="pattern"
-        url="pattern-kirieshka.patt"
-        raycaster="objects: .clickable"
-        emitevents="true"
-        cursor="fuse: false; rayOrigin: mouse;"
-        id="markerA"
-      >
+<a-marker
+    type="pattern"
+    url="pattern-kirieshka.patt"
+    raycaster="objects: .clickable"
+    emitevents="true"
+    cursor="fuse: false; rayOrigin: mouse;"
+    id="markerA"
+>
+    <a-image
+        src="#myImage"
+        position="0 0 0"
+        scale="1 1 1"
+        class="clickable"
+        gesture-handler
+    ></a-image>
+</a-marker>
         <a-entity
           id="bowser-model"
           gltf-model="#bowser"
