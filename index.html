@@ -13,14 +13,26 @@
     <script src="gesture-handler.js"></script>
   </head>
 
-  <body>
-   <a-assets>
-    <img id="myImage" src="кот с комп.jpg" alt="My Image">
-</a-assets>
-
+ <body>
+    <a-scene
+      arjs
+      embedded
+      renderer="logarithmicDepthBuffer: true;"
+      vr-mode-ui="enabled: false"
+      gesture-detector
+      id="scene"
+    >
+      <a-assets>
+        <a-asset-item
+          id="bowser"
+          src="типичная_горничная__оригинальная_работа.glb"
+        >
+        </a-asset-item>
+      </a-assets>
+      
 <a-marker
     type="pattern"
-    url="pattern-kirieshka.patt"
+    url="узор-белые цветы.patt"
     raycaster="objects: .clickable"
     emitevents="true"
     cursor="fuse: false; rayOrigin: mouse;"
