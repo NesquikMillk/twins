@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>AR with Two Markers</title>
+  <title>AR with NFT Marker</title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="stylesheet" href="styles.css">
@@ -17,29 +17,35 @@
     renderer="logarithmicDepthBuffer: true;"
     vr-mode-ui="enabled: false"
   >
-    <!-- маркер1: видео -->
-    <a-marker
-      type="pattern"
+    <!-- NFT-маркер -->
+    <a-nft
+      type="nft"
       url="pattern-white flowers.patt"
-       url="фото_2_2025-01-14_08-51-44 (1).fset"
-      raycaster="objects: .clickable"
-      emitevents="true"
-      id="markerA"
+      smooth="true"
+      smoothCount="10"
+      smoothTolerance=".01"
+      smoothThreshold="5"
     >
-  <a-image src="кот с комп.jpg" position="50 50 0" width="1" height="1" rotation="-90 0 0"></a-image>
-      <a-video src="barash.MP4" position="0 0 0" rotation="-90 0 0" width="2" height="1.5" autoplay="true" loop="true"></a-video>#
-    </a-marker> 
+      <!-- Видео -->
+      <a-video
+        src="barash.MP4"
+        position="0 0 0"
+        rotation="-90 0 0"
+        width="2"
+        height="1.5"
+        autoplay="true"
+        loop="true"
+      ></a-video>
 
-    <!-- маркер2: изображение -->
-    <a-marker
-      type="pattern"
-      url="фото_2_2025-01-14_08-51-44 (1).fset"
-      raycaster="objects: .clickable"
-      emitevents="true"
-      id="markerA"
-    >
-      <a-image src="кот с комп.jpg" position="50 50 0" width="1" height="1" rotation="-90 0 0"></a-image>
-    </a-marker>
+      <!-- Картинка -->
+      <a-image
+        src="кот с комп.jpg"
+        position="0 0.8 0"
+        width="1"
+        height="1"
+        rotation="-90 0 0"
+      ></a-image>
+    </a-nft>
 
     <a-entity camera></a-entity>
   </a-scene>
